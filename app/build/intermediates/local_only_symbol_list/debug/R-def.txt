@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_stat_lock
+id bottomBar
+id btnBattery
+id btnClear
+id btnRefresh
+id btnScrollBottom
+id btnShare
+id btnStart
+id btnStop
+id logView
+id toolbar
+layout activity_main
+xml file_paths
