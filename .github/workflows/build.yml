@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+  env:
+    ANDROID_HOME: $HOME/android
+    PATH: $ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH
   # permissions:
   #   contents: write
     steps:
@@ -17,10 +20,10 @@ jobs:
       - run: mkdir -p $HOME/android 
       - run: curl -O https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip  
       - run: unzip commandlinetools-linux-13114758_latest.zip -d $HOME/android/. 
-      - run: export ANDROID_HOME=$HOME/android
-      - run: export PATH=$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH 
-      - run: ./$ANDROID_HOME/cmdline-tool/bin/sdkmanager --sdk_root=$ANDROID_HOME --licenses
-      - run: ./$ANDROID_HOME/cmdline-tool/bin/sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+      # - run: export ANDROID_HOME=$HOME/android
+      # - run: export PATH=$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH 
+      - run: sdkmanager --sdk_root=$ANDROID_HOME --licenses
+      - run: sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
       - run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
