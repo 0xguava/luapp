@@ -32,6 +32,6 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           name: LockLogger.apk
-          file: app/build/outputs/apk/debug/*.apk 
+          files: app/build/outputs/apk/debug/*.apk 
         env:
           GN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
