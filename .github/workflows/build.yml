@@ -30,9 +30,10 @@ jobs:
         with:
           name: ${{ github.ref_name }}.apk
           path: app/build/outputs/apk/debug/*.apk
+      - run: cp -r app/build/outputs/apk/debug/*.apk ${{ github.ref_name }}.apk  
       - uses: softprops/action-gh-release@v2
         with:
-          name: ${{ github.ref_name }}.apk
-          files: app/build/outputs/apk/debug/*.apk 
+          name: ${{ github.ref_name }}
+          files: ${{ github.ref_name }}.apk
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
