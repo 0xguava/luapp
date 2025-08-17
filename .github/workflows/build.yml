@@ -9,20 +9,20 @@ jobs:
     runs-on: ubuntu-latest
   # permissions:
   #   contents: write
-  steps:
-    - run: find .
-    - run: apt update -y
-    - run: apt install curl openjdk-17-jdk unzip gradle -y
-    - run: mkdir -p $HOME/android 
-    - run: curl -O https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip  
-    - run: unzip commandlinetools-linux-13114758_latest.zip -d $HOME/android/. 
-    - run: export ANDROID_HOME=$HOME/android
-    - run: export PATH=$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH 
-    - run: sdkmanager --sdk_root=$ANDROID_HOME --licenses
-    - run: sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
-    - uses: actions/checkout@v4
-    - run: gradle assembleDebug
-    - uses: actions/upload-artifact@v4
-      with:
-        name: LockLogger.apk
-        path: app/build/outputs/apk/debug/*.apk
+    steps:
+      - uses: actions/checkout@v4
+      - run: find .
+      - run: apt update -y
+      - run: apt install curl openjdk-17-jdk unzip gradle -y
+      - run: mkdir -p $HOME/android 
+      - run: curl -O https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip  
+      - run: unzip commandlinetools-linux-13114758_latest.zip -d $HOME/android/. 
+      - run: export ANDROID_HOME=$HOME/android
+      - run: export PATH=$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH 
+      - run: sdkmanager --sdk_root=$ANDROID_HOME --licenses
+      - run: sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+      - run: gradle assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LockLogger.apk
+          path: app/build/outputs/apk/debug/*.apk
