@@ -2,7 +2,7 @@ name: Building LockLogger.apk with gradle
 
 on:
   push:
-    branch: master
+    branches: master
 
 jobs:
   build:
