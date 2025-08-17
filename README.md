@@ -25,7 +25,7 @@ while using it during the day.**
 
 ## Showcase
 
-![showcase](showcase.png)
+![showcase](showcase.png=x720)
 
 ## At last
 
