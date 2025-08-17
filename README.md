@@ -25,7 +25,7 @@ while using it during the day.**
 
 ## Showcase
 
-![showcase](showcase.png =x720)
+<img src="showcase.png" alt="showcase" height=720px />
 
 ## At last
 
