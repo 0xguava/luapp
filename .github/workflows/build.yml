@@ -2,7 +2,8 @@ name: Building LockLogger.apk with gradle
 
 on:
   push:
-    tag: "LockLogger.*.*"  
+    tags: 
+      - "LockLogger.*.*"  
 
 jobs:
   build:
