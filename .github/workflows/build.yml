@@ -29,6 +29,7 @@ jobs:
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools
           sdkmanager --sdk_root=$ANDROID_HOME --licenses
           sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+          gradle wrapper
           gradle :app:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
