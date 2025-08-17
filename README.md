@@ -18,10 +18,10 @@ First prototype is fully vibe coding
 
 ## Purpose of the App
 
-Only if you've read the [Idea behind the App](#Idea-behing-the-App).
+Only if you've read the [Idea behind the App](#idea-behing-the-app).
 
-**No matter what this app logs or tracks. The sole purpose behind creation of this app is to the track sleeping time of mobile phone addicts who usually fall asleep
-while using it during the day.**
+<mark>**No matter what this app logs or tracks. The sole purpose behind creation of this app is to the track sleeping time of mobile phone addicts who usually fall asleep
+while using it.**</mark>
 
 ## Showcase
 
