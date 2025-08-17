@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: find .
-      - run: apt update -y
-      - run: apt install curl openjdk-17-jdk unzip gradle -y
+      - run: sudo apt update -y
+      - run: sudo apt install curl openjdk-17-jdk unzip gradle -y
       - run: mkdir -p $HOME/android 
       - run: curl -O https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip  
       - run: unzip commandlinetools-linux-13114758_latest.zip -d $HOME/android/. 
