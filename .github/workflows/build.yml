@@ -28,11 +28,11 @@ jobs:
           ./gradlew :app:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
-          name: LockLogger.apk
+          name: ${{ github.ref_name }}.apk
           path: app/build/outputs/apk/debug/*.apk
       - uses: softprops/action-gh-release@v2
         with:
-          name: LockLogger.apk
+          name: ${{ github.ref_name }}.apk
           files: app/build/outputs/apk/debug/*.apk 
         env:
-          GN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
