@@ -7,9 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  env:
-    ANDROID_HOME: $HOME/android
-    PATH: $ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH
+  # env:
+  #   ANDROID_HOME: $HOME/android
   # permissions:
   #   contents: write
     steps:
@@ -23,6 +22,9 @@ jobs:
       # - run: export ANDROID_HOME=$HOME/android
       # - run: export PATH=$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH 
       - run: sdkmanager --sdk_root=$ANDROID_HOME --licenses
+        env: 
+          ANDROID_HOME: $HOME/android
+          PATH: $ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH
       - run: sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-34" "build-tools;34.0.0"
       - run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
