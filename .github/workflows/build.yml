@@ -2,16 +2,13 @@ name: Building LockLogger.apk with gradle
 
 on:
   push:
-    brach: master
+    branch: master
 
 jobs:
   build:
     runs-on: ubuntu-latest
-  permissions:
-    contents: write
-  # env:
-    # CLI_TOOLS_NAME: commandlinetools-linux-13114758_latest
-    # AND_HOME: $HOME/android
+  # permissions:
+  #   contents: write
   steps:
     - uses: actions/checkout@v4
     - run: find .
